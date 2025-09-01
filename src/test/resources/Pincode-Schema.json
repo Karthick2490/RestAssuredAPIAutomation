@@ -1,0 +1,81 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Pincode API Response Schema",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "Message": {
+        "type": "string"
+      },
+      "Status": {
+        "type": "string",
+        "enum": ["Success", "Error"]
+      },
+      "PostOffice": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "Name": {
+              "type": "string"
+            },
+            "Description": {
+              "type": ["string", "null"]
+            },
+            "BranchType": {
+              "type": "string"
+            },
+            "DeliveryStatus": {
+              "type": "string"
+            },
+            "Circle": {
+              "type": "string"
+            },
+            "District": {
+              "type": "string"
+            },
+            "Division": {
+              "type": "string"
+            },
+            "Region": {
+              "type": "string"
+            },
+            "Block": {
+              "type": "string"
+            },
+            "State": {
+              "type": "string"
+            },
+            "Country": {
+              "type": "string"
+            },
+            "Pincode": {
+              "type": "string",
+              "pattern": "^[1-9][0-9]{5}$"
+            }
+          },
+          "required": [
+            "Name",
+            "Description",
+            "BranchType",
+            "DeliveryStatus",
+            "Circle",
+            "District",
+            "Division",
+            "Region",
+            "Block",
+            "State",
+            "Country",
+            "Pincode"
+          ]
+        }
+      }
+    },
+    "required": [
+      "Message",
+      "Status",
+      "PostOffice"
+    ]
+  }
+}
