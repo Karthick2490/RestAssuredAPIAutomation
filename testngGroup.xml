@@ -1,0 +1,72 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="TestNG Groups Suite" verbose="1">
+
+    <!-- Run all tests -->
+    <test name="All Tests">
+        <classes>
+            <class name="com.apiautomation.TestNgAnnotations.Groups"/>
+        </classes>
+    </test>
+
+    <!-- Run only Regression tests -->
+    <test name="Regression Tests">
+        <groups>
+            <run>
+                <include name="Regression"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.apiautomation.TestNgAnnotations.Groups"/>
+        </classes>
+    </test>
+
+    <!-- Run only Sanity tests -->
+    <test name="Sanity Tests">
+        <groups>
+            <run>
+                <include name="Sanity"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.apiautomation.TestNgAnnotations.Groups"/>
+        </classes>
+    </test>
+
+    <!-- Run only Smoke tests -->
+    <test name="Smoke Tests">
+        <groups>
+            <run>
+                <include name="Smoke"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.apiautomation.TestNgAnnotations.Groups"/>
+        </classes>
+    </test>
+
+    <!-- Run multiple groups: Sanity AND Smoke -->
+    <test name="Sanity and Smoke Tests">
+        <groups>
+            <run>
+                <include name="Sanity"/>
+                <include name="Smoke"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.apiautomation.TestNgAnnotations.Groups"/>
+        </classes>
+    </test>
+
+    <!-- Exclude specific group -->
+    <test name="Exclude Regression Tests">
+        <groups>
+            <run>
+                <exclude name="Regression"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.apiautomation.TestNgAnnotations.Groups"/>
+        </classes>
+    </test>
+
+</suite>
